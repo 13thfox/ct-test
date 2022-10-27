@@ -1,0 +1,14 @@
+touch /etc/persistent/ct
+cat /tmp/system.cfg | grep code
+
+result should be :
+radio.1.countrycode=360
+radio.countrycode=360
+
+sed -i 's/countrycode=360/countrycode=511/g' /tmp/system.cfg
+
+
+sed -i 's/countrycode=360/countrycode=511/g' /tmp/running.cfg
+
+save 
+reboot
